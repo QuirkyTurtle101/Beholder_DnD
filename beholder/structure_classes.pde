@@ -8,6 +8,21 @@ class DisplayClass{
     buttons = new ArrayList<Clickable>();
   }
   
+  void initialize(){
+    for(Clickable i : buttons){
+      switch(i.text){
+        case "Sheet":
+          i.initialize(sheetSelect);
+          break;
+        case "Back":
+          i.initialize(mainMenu);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  
   void display(){
     for(Clickable i : buttons){
       i.display();
@@ -20,7 +35,7 @@ class MainMenu extends DisplayClass{
   
   MainMenu(){
     super();
-    buttons.add(new MainMenuButton(300, 250, 200, 100, sheetSelect, "Sheet"));
+    buttons.add(new MainMenuButton(300, 250, 200, 100, "Sheet"));
     debug = "MainMenu";
   }
     
@@ -34,7 +49,7 @@ class SheetSelect extends DisplayClass{
   
   SheetSelect(){
     super();
-    buttons.add(new MainMenuButton(20, 20, 50, 50, mainMenu, "Back"));
+    buttons.add(new MainMenuButton(20, 20, 50, 50, "Back"));
     debug = "SheetSelect";
   }
   

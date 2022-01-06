@@ -10,8 +10,11 @@ DisplayClass isLoaded;
 
 void setup(){
   size(800,600);
-  mainMenu = new MainMenu();
   sheetSelect = new SheetSelect();
+  mainMenu = new MainMenu();
+  
+  mainMenu.initialize();
+  sheetSelect.initialize();
   
   isLoaded = mainMenu;
 }

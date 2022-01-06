@@ -5,12 +5,17 @@ class Clickable{
   int y;
   int sizeX;
   int sizeY;
+  String text;
   
   Clickable(int _x, int _y, int _sizeX, int _sizeY){
     x = _x;
     y = _y;
     sizeX = _sizeX;
     sizeY = _sizeY;
+  }
+  
+  void initialize(DisplayClass input){
+    
   }
   
   void display(){
@@ -26,12 +31,14 @@ class Clickable{
 
 class MainMenuButton extends Clickable{
   DisplayClass pointer; //this variable is what determines where the button will go when clicked
-  String text;
   
-  MainMenuButton(int _x, int _y, int _sizeX, int _sizeY, DisplayClass _pointer, String _text){
+  MainMenuButton(int _x, int _y, int _sizeX, int _sizeY, String _text){
     super(_x, _y, _sizeX, _sizeY);
-    pointer = _pointer;
     text = _text;
+  }
+  
+  void initialize(DisplayClass input){
+    pointer = input;
   }
   
   void display(){
