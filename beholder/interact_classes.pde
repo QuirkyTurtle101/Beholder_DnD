@@ -29,10 +29,10 @@ class Clickable{
 }
 
 
-class MainMenuButton extends Clickable{
+class MenuButton extends Clickable{
   DisplayClass pointer; //this variable is what determines where the button will go when clicked
   
-  MainMenuButton(int _x, int _y, int _sizeX, int _sizeY, String _text){
+  MenuButton(int _x, int _y, int _sizeX, int _sizeY, String _text){
     super(_x, _y, _sizeX, _sizeY);
     text = _text;
   }

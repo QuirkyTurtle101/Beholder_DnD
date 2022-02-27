@@ -1,6 +1,8 @@
 //Main code 
+//first some imports, you love to see it
+import java.io.File;
 
-//these are our menu classes - they must be defined in advance
+//these are our menu classes - they must be defined in advance because if we don't create them piecemeal there's some fucking hocus pocus going on that breaks them
 DisplayClass mainMenu;
 DisplayClass sheetSelect;
 
@@ -9,7 +11,7 @@ DisplayClass isLoaded;
 
 
 void setup(){
-  size(800,600);
+  size(1200,800);
   sheetSelect = new SheetSelect();
   mainMenu = new MainMenu();
   

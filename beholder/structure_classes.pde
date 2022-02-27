@@ -3,6 +3,7 @@
 class DisplayClass{
   String debug;
   ArrayList<Clickable> buttons;
+  ArrayList<JSONObject> json;
   
   DisplayClass(){
     buttons = new ArrayList<Clickable>();
@@ -14,7 +15,7 @@ class DisplayClass{
         case "Sheet":
           i.initialize(sheetSelect);
           break;
-        case "Back":
+        case "Main":
           i.initialize(mainMenu);
           break;
         default:
@@ -35,7 +36,7 @@ class MainMenu extends DisplayClass{
   
   MainMenu(){
     super();
-    buttons.add(new MainMenuButton(300, 250, 200, 100, "Sheet"));
+    buttons.add(new MenuButton(500, 350, 200, 100, "Sheet"));
     debug = "MainMenu";
   }
     
@@ -49,8 +50,20 @@ class SheetSelect extends DisplayClass{
   
   SheetSelect(){
     super();
-    buttons.add(new MainMenuButton(20, 20, 50, 50, "Back"));
+    buttons.add(new MenuButton(20, 20, 50, 50, "Main"));
     debug = "SheetSelect";
+  }
+  
+  void display(){
+    super.display();
+  }
+}
+
+class SheetLoader extends DisplayClass{
+  
+  SheetLoader(){
+    super();
+    loadJsonObjects();
   }
   
   void display(){
