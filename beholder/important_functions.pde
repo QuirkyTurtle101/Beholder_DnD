@@ -1,6 +1,6 @@
 //we keep important functions here so they don't clutter up the other tabs
 
-void loadJsonObjects(){
+ArrayList<JSONObject> loadJsonObjects(){
   File dir = new File("json");
   ArrayList<JSONObject> temp = new ArrayList<JSONObject>();
   
@@ -13,4 +13,6 @@ void loadJsonObjects(){
       temp.add(loadJSONObject(path));
     }
   }
+  
+  return temp;
 }
